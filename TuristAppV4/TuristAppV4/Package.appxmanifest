@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
 
-  <Identity Name="da6bf99e-4936-4f35-8dbe-13037c7626b5"
+  <Identity Name="6a9e7c4e-8c76-4cc6-b241-499483fd1540"
             Publisher="CN=Danny"
             Version="1.0.0.0" />
 
   <Properties>
-    <DisplayName>TuristAppV4.Windows</DisplayName>
+    <DisplayName>TuristAppV4</DisplayName>
     <PublisherDisplayName>Danny</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -23,12 +23,12 @@
   <Applications>
     <Application Id="App"
         Executable="$targetnametoken$.exe"
-        EntryPoint="TuristAppV4.Windows.App">
+        EntryPoint="TuristAppV4.App">
         <m2:VisualElements
-            DisplayName="TuristAppV4.Windows"
+            DisplayName="TuristAppV4"
             Square150x150Logo="Assets\Logo.png"
             Square30x30Logo="Assets\SmallLogo.png"
-            Description="TuristAppV4.Windows"
+            Description="TuristAppV4"
             ForegroundText="light"
             BackgroundColor="#464646">
             <m2:SplashScreen Image="Assets\SplashScreen.png" />
