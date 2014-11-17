@@ -21,9 +21,11 @@ namespace TuristAppV4
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
+    ///
+
     public sealed partial class MainPage : Page
     {
-        Dictionary<string,string> dictionary = new Dictionary<string, string>(); 
+        static Dictionary<string, string> dictionary = new Dictionary<string, string>(); 
 
         public MainPage()
         {
@@ -36,7 +38,7 @@ namespace TuristAppV4
         {
             if (NameBox.Text != "" && PassBox.Password != "")
             {
-                 
+                SuccessBlock.Text = "Success!";
                 
                 dictionary.Add(PassBox.Password, NameBox.Text);
 
@@ -59,7 +61,7 @@ namespace TuristAppV4
             }
             else
             {
-                ErrorBox.Text = "Error! Couldn't find user";
+                ErrorBox.Text = "Error! Username or password incorrect";
             }
         }
     }
