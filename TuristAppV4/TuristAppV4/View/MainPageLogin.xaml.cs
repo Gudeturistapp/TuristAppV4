@@ -36,16 +36,21 @@ namespace TuristAppV4
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (NameBox.Text != "" && PassBox.Password != "")
+
+
+            if (!String.IsNullOrWhiteSpace(NameBox.Text) && !String.IsNullOrWhiteSpace(PassBox.Password))
             {
-               
                 dictionary.Add(PassBox.Password, NameBox.Text);
 
-                Frame.Navigate(typeof(View.MainPage));
-
-
+                Frame.Navigate(typeof (View.MainPage));
 
             }
+            else
+            {
+                ErrorBox.Text = "Please enter values in both fields";
+            }
+
+          
             
         }
 
