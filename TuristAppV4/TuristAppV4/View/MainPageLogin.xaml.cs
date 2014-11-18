@@ -38,8 +38,7 @@ namespace TuristAppV4
         {
             if (NameBox.Text != "" && PassBox.Password != "")
             {
-                SuccessBlock.Text = "Success!";
-                
+               
                 dictionary.Add(PassBox.Password, NameBox.Text);
 
                 Frame.Navigate(typeof(View.MainPage));
@@ -61,7 +60,7 @@ namespace TuristAppV4
             }
             else
             {
-                ErrorBox.Text = "Error! Username or password incorrect";
+                ErrorBox.Text = "Error! User not found";
             }
         }
     }
