@@ -37,18 +37,38 @@ namespace TuristAppV4
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
+            //if(NameBox.Text != "" && PassBox.Password != "")
 
-            if (!String.IsNullOrWhiteSpace(NameBox.Text) && !String.IsNullOrWhiteSpace(PassBox.Password))
+           if (!String.IsNullOrWhiteSpace(NameBox.Text) && !String.IsNullOrWhiteSpace(PassBox.Password))
             {
-                dictionary.Add(PassBox.Password, NameBox.Text);
+                if (!dictionary.ContainsKey(NameBox.Text))
+                {
+                    dictionary.Add(NameBox.Text, PassBox.Password);
+                    ErrorBlock.Text = "";
+                    SuccessBlock.Text = "Success! User created. Please log in.";
+                    NameBox.Text = "";
+                    PassBox.Password = "";
+                }
 
-                Frame.Navigate(typeof (View.MainPage));
+                else
+                {
+                    SuccessBlock.Text = "";
+                    ErrorBlock.Text = "Error! Username is already in use.";
+
+                }
+
+
+               
+         
 
             }
             else
-            {
-                ErrorBox.Text = "Please enter values in both fields";
+           {
+               SuccessBlock.Text = "";
+                ErrorBlock.Text = "Please enter values in both fields";
             }
+
+            
 
           
             
@@ -58,15 +78,19 @@ namespace TuristAppV4
         {
            
 
-            if (dictionary.ContainsKey(PassBox.Password) &&
-                dictionary.ContainsValue(NameBox.Text))
+            if (dictionary.ContainsKey(NameBox.Text) &&
+                dictionary.ContainsValue(PassBox.Password))
             {
                 Frame.Navigate(typeof (View.MainPage));
             }
             else
             {
-                ErrorBox.Text = "Error! User not found";
+                SuccessBlock.Text = "";
+                ErrorBlock.Text = "Error! User not found";
             }
+
+
+
         }
     }
 }
